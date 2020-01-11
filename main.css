@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+}
+
+aside {
+    position: absolute;
+    height: 300px;
+    min-width: 300px;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aside {
+    width: 300px;
+    height: 100%;
+}
+
+@media screen and (min-width: 341px) and (max-width: 900px) {
+    aside {
+        width: calc(100vw - 40px);
+    }
+}
+
+@media screen and (max-width: 340px) {
+    aside {
+        min-width: auto;
+        width: 100vw;
+        height: 100vw;
+        top: 0;
+        left: 0;
+    }
+
+    #aside {
+        width: 100%;
+    }
+}
