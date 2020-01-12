@@ -56,7 +56,23 @@ export default side => {
         return n;
     };
 
+    const controlDown = e => {
+        const classList = Array.from(e.target.classList);
+
+        if (!classList.includes('arrow')) return;
+
+        const code = classList
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+            .join('');
+
+        onKeyDown({ code });
+    };
+
     document.addEventListener('keydown', onKeyDown);
+
+    document
+        .querySelector('.controls')
+        .addEventListener('click', controlDown);
 
     return head => {
         if (!direction) return head;

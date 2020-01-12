@@ -28,6 +28,52 @@ aside {
     height: 100%;
 }
 
+.controls {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls > * {
+    width: 300px;
+    height: 100px;
+    display: flex;
+}
+
+.single {
+    justify-content: center;
+}
+
+.double {
+    justify-content: space-between;
+}
+
+.arrow {
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    background: center / contain no-repeat url(./pix/arrow.svg);
+    opacity: .4;
+    border: none;
+    outline: none;
+}
+
+.up { transform: rotate(-90deg) }
+.left { transform: rotate(180deg) }
+.down { transform: rotate(90deg) }
+
+@media screen and (min-width:901px) {
+    .controls {
+        display: none;
+    }
+}
+
 @media screen and (min-width: 341px) and (max-width: 900px) {
     aside {
         width: calc(100vw - 40px);
@@ -45,5 +91,9 @@ aside {
 
     #aside {
         width: 100%;
+    }
+
+    .controls > * {
+        width: 100vw;
     }
 }
