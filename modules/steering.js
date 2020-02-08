@@ -42,6 +42,8 @@ export default side => {
     let prevRole = null;
 
     const onKeyDown = e => {
+        e.preventDefault();
+
         const key = keys.find(k => k.codes.some(c => c == e.code));
     
         if (!key || key.role == prevRole) return;
